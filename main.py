@@ -24,7 +24,7 @@ G_loss_function = nn.BCELoss()
 
 imageUtil = ImageUtil()
 
-epoch_size = 1000
+epoch_size = 10000
 for epoch in range(epoch_size):
     for i, data in enumerate(train_loader):
         real_data, real_label = data
@@ -85,7 +85,7 @@ for epoch in range(epoch_size):
 
             if i % 10 == 0:
                 print('{0}: G_loss is {1}'.format(i, G_loss))
-            if i % 500 == 0:
+            if i % 1000 == 0:
                 fake_data = fake_data.view(64, -1)
                 imageUtil.save(fake_data)
 
